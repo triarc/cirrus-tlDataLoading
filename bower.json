@@ -1,0 +1,26 @@
+{
+  "name": "cirrus-tlDataLoading",
+  "version": "0.0.1",
+  "authors": [
+    "Marco Bachmann <mb@triarc-labs.com>"
+  ],
+  "main": "tlDataLoading.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "endpoint": "https://github.com/triarc/cirrus-tlDataLoading.git",
+  "dependencies": {
+    "toastr": "~2.1.1",
+    "cirrus-utils": "~0.0.1",
+    "cirrus-tlDataServices": "~0.0.1",
+    "cirrus-array": "~0.0.1"
+  }
+}
