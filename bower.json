@@ -23,7 +23,7 @@
   "dependencies": {
     "toastr": "~2.1.1",
     "cirrus-utils": "~0.1.0",
-    "cirrus-tlDataServices": "~0.0.15",
+    "cirrus-tlDataServices": "~0.0.18",
     "cirrus-tlArray": "~0.0.8"
   }
 }
