@@ -18,7 +18,7 @@ declare module Triarc.Data {
         private _data;
         private initialised;
         private initialOderByDirection;
-        constructor(fetchFn: (skip: number, top: number) => ng.IPromise<Triarc.Data.DataResponse<T[]>>, $translate?: ng.translate.ITranslateService, preLoadBy?: number, initialOrderBy?: string);
+        constructor(fetchFn: (skip: number, top: number) => angular.IPromise<Triarc.Data.DataResponse<T[]>>, $translate?: angular.translate.ITranslateService, preLoadBy?: number, initialOrderBy?: string);
         reset(): void;
         data: any[];
         hasMoreResults: boolean;

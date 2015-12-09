@@ -18,7 +18,7 @@ var Triarc;
                 this.reset();
                 this.initialised = false;
                 this._preLoadBy = preLoadBy;
-                this.initialOderByDirection = 0 /* ASC */;
+                this.initialOderByDirection = OrderByDirection.ASC;
             }
             LazyDataLoader.prototype.reset = function () {
                 this._data = [];
@@ -77,7 +77,7 @@ var Triarc;
             });
             Object.defineProperty(LazyDataLoader.prototype, "orderBy", {
                 get: function () {
-                    return this._orderByValue + (this._orderByDirectionValue == 0 /* ASC */ ? " asc" : " desc");
+                    return this._orderByValue + (this._orderByDirectionValue == OrderByDirection.ASC ? " asc" : " desc");
                     ;
                 },
                 enumerable: true,
@@ -117,12 +117,12 @@ var Triarc;
             LazyDataLoader.prototype.fetchAndOrderBy = function (column) {
                 // switching from ASC to DESC?
                 if (this._orderByValue == column) {
-                    this._orderByDirectionValue = this._orderByDirectionValue == 0 /* ASC */ ? 1 /* DESC */ : 0 /* ASC */;
+                    this._orderByDirectionValue = this._orderByDirectionValue == OrderByDirection.ASC ? OrderByDirection.DESC : OrderByDirection.ASC;
                 }
                 else {
                     // different sort column
                     this._orderByValue = column;
-                    this._orderByDirectionValue = 0 /* ASC */;
+                    this._orderByDirectionValue = OrderByDirection.ASC;
                 }
                 this.load();
             };
@@ -202,10 +202,7 @@ var Triarc;
 (function (Triarc) {
     var mod = angular.module('tlDataLoading', []);
     mod.directive('tlInfiniteScroll', [
-        '$rootScope',
-        '$window',
-        '$timeout',
-        function ($rootScope, $window, $timeout) {
+        '$rootScope', '$window', '$timeout', function ($rootScope, $window, $timeout) {
             return {
                 link: function (scope, elem, attrs) {
                     var checkWhenEnabled, handler, scrollDistance, scrollEnabled;
